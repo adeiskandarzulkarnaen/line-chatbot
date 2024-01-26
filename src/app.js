@@ -30,6 +30,13 @@ app.post("/webhook", line.middleware(config), (req, res) => {
     });
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "success",
+    messasge: "welcome to out line chat bot api",
+  });
+});
+
 // event handler
 function handleEvent(event) {
   if (event.type !== "message" || event.message.type !== "text") {
